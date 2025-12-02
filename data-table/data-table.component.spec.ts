@@ -48,7 +48,7 @@ describe('DataTableComponent', () => {
   });
 
   it('should sort data when clicking sortable column', () => {
-    spyOn(component.sortChange, 'emit');
+    jest.spyOn(component.sortChange, 'emit');
     component.onSort(mockColumns[1]); // name column
     
     expect(component.sortColumn).toBe('name');
@@ -74,7 +74,7 @@ describe('DataTableComponent', () => {
   });
 
   it('should emit filter change event', () => {
-    spyOn(component.filterChange, 'emit');
+    jest.spyOn(component.filterChange, 'emit');
     component.searchTerm = 'test';
     component.onFilter();
     expect(component.filterChange.emit).toHaveBeenCalledWith('test');
